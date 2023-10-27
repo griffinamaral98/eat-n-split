@@ -1,9 +1,9 @@
 import Button from "./Button";
 
-const SplitBillForm = () => {
+const SplitBillForm = ({ selectedFriend }) => {
   return (
     <form className="form-split-bill">
-      <h2>Split a Bill with X</h2>
+      <h2>Split a Bill with {selectedFriend.name}</h2>
 
       <label>💰 Bill Total</label>
       <input type="number" />
@@ -11,13 +11,13 @@ const SplitBillForm = () => {
       <label>🧍‍♂️ Your Total</label>
       <input type="number" />
 
-      <label>🧍 X's Total</label>
+      <label>🧍 {selectedFriend.name}'s Total</label>
       <input type="number" disabled />
 
       <label>🤑 Who is paying the bill?</label>
       <select>
         <option value="user">You</option>
-        <option value="friend">X</option>
+        <option value="friend">{selectedFriend.name}</option>
       </select>
 
       <Button>Split Bill</Button>
